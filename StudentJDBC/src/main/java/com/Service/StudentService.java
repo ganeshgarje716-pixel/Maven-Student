@@ -32,4 +32,15 @@ public class StudentService {
 		return msg;
 	}
 
+	
+	public Student get(int id) {
+		
+		Student student = dao.getStudent(id);
+		
+		return student;
+	}
+	
+	
+	
+	
 }

@@ -2,6 +2,7 @@ package com.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.Entity.Student;
@@ -100,6 +101,41 @@ public class StudentDao {
 		}
 		
 		return "Student Delete Successfully";
+	}
+	
+	
+	public Student getStudent(int id) {
+		
+		Student student=null;
+		
+		try {
+			
+			PreparedStatement pst = con.prepareStatement("select * from student where id=?");
+			
+			pst.setInt(1, id);
+			
+			ResultSet rs = pst.executeQuery();
+			
+			while (rs.next()) {
+				
+				int id1=rs.getInt("id");
+				String name=rs.getString("name");
+				String email=rs.getString("email");
+				float mobileNo=rs.getFloat("mobileNo");
+				String city=rs.getString("city");
+				String branch=rs.getString("branch");
+				double cgpa=rs.getDouble("cgpa");
+				
+			     student=new Student(id1, name, email, mobileNo, city, branch, cgpa);
+				
+			}
+		} 
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return student;
 	}
 	
 	

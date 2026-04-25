@@ -27,6 +27,12 @@ public class StudentController {
 	}
 	
 	
+	public Student get(int id) {
+		
+		return service.get(id);
+	}
+	
+	
 	
 	
 	

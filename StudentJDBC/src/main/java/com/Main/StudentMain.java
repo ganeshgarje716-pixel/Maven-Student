@@ -125,7 +125,38 @@ public class StudentMain {
 					
 					e.printStackTrace();
 				}
+			
+			break;	
+			}
+			
+			
+			
+			if (no == 4) {
 				
+				
+				System.out.println("Enter Id = ");
+				int id=sc.nextInt();
+				
+				
+				try {
+					
+					Student student = controller.get(id);
+					
+					System.out.println("Id        = "+student.getId());
+					System.out.println("Name      = "+student.getName());
+					System.out.println("Email     = "+student.getEmail());
+					System.out.println("Mobile No = "+student.getMobileNo());
+					System.out.println("City      = "+student.getCity());
+					System.out.println("Branch    = "+student.getBranch());
+					System.out.println("CGPA      = "+student.getCgpa());
+					
+				} 
+				catch (Exception e) {
+					
+					e.printStackTrace();
+				}
+			
+			break;	
 			}
 			
 			
