@@ -15,5 +15,13 @@ public class StudentService {
 		 
 		return msg;
 	}
+	
+	
+	public String update(Student student) {
+		
+		String msg = dao.studentUpdate(student);
+		
+		return msg;
+	}
 
 }

@@ -71,6 +71,43 @@ public class StudentMain {
 			}
 			
 			
+			if (no == 2) {
+				
+				
+				System.out.println("Enter Id = ");
+				int id=sc.nextInt();
+				
+				System.out.println("Enter Student Name = ");
+				String name=sc.next();
+				
+				System.out.println("Enter Email = ");
+				String email=sc.next();
+				
+				System.out.println("Enter Mobile No = ");
+				float mobileNo=sc.nextFloat();
+				
+				System.out.println("Enter City = ");
+				String city=sc.next();
+				
+				System.out.println("Enter Branch = ");
+				String branch=sc.next();
+				
+				System.out.println("Enter CGPA =");
+				double cgpa=sc.nextDouble();
+				
+				
+				try {
+					
+					System.out.println(controller.update(new Student(id, name, email, mobileNo, city, branch, cgpa)));
+				}
+				catch (Exception e) {
+					
+					e.printStackTrace();
+				}
+				
+			}
+			
+			
 		}
 		
 		

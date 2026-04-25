@@ -57,5 +57,30 @@ public class StudentDao {
 	}
 	
 	
+	public String studentUpdate(Student student) {
+		
+		try {
+			
+			PreparedStatement pst = con.prepareStatement("update student set name=?, email=?, mobileNo=?, city=?, branch=?, cgpa=? where id=?");
+			
+			pst.setString(1, student.getName());
+			pst.setString(2, student.getEmail());
+			pst.setFloat(3, student.getMobileNo());
+			pst.setString(4, student.getCity());
+			pst.setString(5, student.getBranch());
+			pst.setDouble(6, student.getCgpa());
+			pst.setInt(7, student.getId());
+			
+			pst.executeUpdate();
+		} 
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return "Student Update Successfully";
+	}
+	
+	
 
 }

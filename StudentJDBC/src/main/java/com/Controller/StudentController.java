@@ -13,4 +13,16 @@ public class StudentController {
 		
 		return service.insert(student);
 	}
+	
+	
+	public String update(Student student) {
+		
+		return service.update(student);
+	}
+	
+	
+	
+	
+	
+	
 }
