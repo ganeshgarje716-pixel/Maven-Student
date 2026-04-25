@@ -82,5 +82,26 @@ public class StudentDao {
 	}
 	
 	
+	
+	public String deleteStudent(int id) {
+		
+		
+		try {
+			
+			PreparedStatement pst = con.prepareStatement("delete from student where id=?");
+			
+			pst.setInt(1, id);
+			
+			pst.executeUpdate();
+		} 
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return "Student Delete Successfully";
+	}
+	
+	
 
 }

@@ -104,6 +104,27 @@ public class StudentMain {
 					
 					e.printStackTrace();
 				}
+			
+			break;
+			}
+			
+			
+			
+			if (no == 3) {
+				
+				
+				System.out.println("Enter Id = ");
+				int id=sc.nextInt();
+				
+				
+				try {
+					
+					System.out.println(controller.delete(id));
+				} 
+				catch (Exception e) {
+					
+					e.printStackTrace();
+				}
 				
 			}
 			

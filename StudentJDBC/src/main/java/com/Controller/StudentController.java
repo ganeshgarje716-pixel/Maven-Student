@@ -21,6 +21,12 @@ public class StudentController {
 	}
 	
 	
+	public String delete(int id) {
+		
+		return service.delete(id);
+	}
+	
+	
 	
 	
 	

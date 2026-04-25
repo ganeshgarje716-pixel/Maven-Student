@@ -23,5 +23,13 @@ public class StudentService {
 		
 		return msg;
 	}
+	
+	
+	public String delete(int id) {
+		
+		String msg = dao.deleteStudent(id);
+		
+		return msg;
+	}
 
 }
