@@ -1,5 +1,7 @@
 package com.Service;
 
+import java.util.ArrayList;
+
 import com.Dao.StudentDao;
 import com.Entity.Student;
 
@@ -38,6 +40,14 @@ public class StudentService {
 		Student student = dao.getStudent(id);
 		
 		return student;
+	}
+	
+	
+	public ArrayList<Student> getAll() {
+		
+		ArrayList<Student> students = dao.getAllStudent();
+		
+		return students;
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.Controller;
 
+import java.util.ArrayList;
+
 import com.Entity.Student;
 import com.Service.StudentService;
 
@@ -30,6 +32,12 @@ public class StudentController {
 	public Student get(int id) {
 		
 		return service.get(id);
+	}
+	
+	
+	public ArrayList<Student> getAll() {
+		
+		return service.getAll();
 	}
 	
 	

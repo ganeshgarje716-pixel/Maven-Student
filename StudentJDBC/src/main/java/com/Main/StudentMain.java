@@ -1,5 +1,6 @@
 package com.Main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.Controller.StudentController;
@@ -71,7 +72,7 @@ public class StudentMain {
 			}
 			
 			
-			if (no == 2) {
+			else if (no == 2) {
 				
 				
 				System.out.println("Enter Id = ");
@@ -110,7 +111,7 @@ public class StudentMain {
 			
 			
 			
-			if (no == 3) {
+			else if (no == 3) {
 				
 				
 				System.out.println("Enter Id = ");
@@ -131,7 +132,7 @@ public class StudentMain {
 			
 			
 			
-			if (no == 4) {
+			else if (no == 4) {
 				
 				
 				System.out.println("Enter Id = ");
@@ -158,6 +159,46 @@ public class StudentMain {
 			
 			break;	
 			}
+			
+			
+			
+			else if (no == 5) {
+				
+				
+				try {
+					
+                    ArrayList<Student> all = controller.getAll();
+                    
+                    for (Student students : all) {
+					
+					System.out.println("Id        = "+students.getId());
+					System.out.println("Name      = "+students.getName());
+					System.out.println("Email     = "+students.getEmail());
+					System.out.println("Mobile No = "+students.getMobileNo());
+					System.out.println("City      = "+students.getCity());
+					System.out.println("Branch    = "+students.getBranch());
+					System.out.println("CGPA      = "+students.getCgpa());
+					
+					System.out.println("============================================");
+					
+                    }
+				}
+				catch (Exception e) {
+					
+					e.printStackTrace();
+				}
+				
+			break;	
+			}
+			
+			
+            else if (no == 6) {
+				
+				System.out.println("Thank You");
+			
+			break;	
+			}
+			
 			
 			
 		}

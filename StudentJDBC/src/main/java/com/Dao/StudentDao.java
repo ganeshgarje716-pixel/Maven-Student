@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.Entity.Student;
 import com.jdbcConnection.JDBCUtil;
@@ -137,6 +138,44 @@ public class StudentDao {
 		
 		return student;
 	}
+	
+	
+	
+    public ArrayList<Student> getAllStudent() {
+		
+	   	ArrayList<Student> students=new ArrayList<Student>();
+	
+		try {
+			
+			PreparedStatement pst = con.prepareStatement("select * from student");
+			
+			ResultSet rs = pst.executeQuery();
+			
+			while (rs.next()) {
+				
+				int id1=rs.getInt("id");
+				String name=rs.getString("name");
+				String email=rs.getString("email");
+				float mobileNo=rs.getFloat("mobileNo");
+				String city=rs.getString("city");
+				String branch=rs.getString("branch");
+				double cgpa=rs.getDouble("cgpa");
+				
+			    
+			    students.add(new Student(id1, name, email, mobileNo, city, branch, cgpa));
+			}
+		} 
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return students;
+	}
+	
+	
+	
+	
 	
 	
 
