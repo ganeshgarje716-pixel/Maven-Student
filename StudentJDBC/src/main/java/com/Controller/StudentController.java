@@ -1,5 +1,16 @@
 package com.Controller;
 
+import com.Entity.Student;
+import com.Service.StudentService;
+
 public class StudentController {
 
+	
+	StudentService service = new StudentService();
+	
+	
+	public String insert(Student student) {
+		
+		return service.insert(student);
+	}
 }
