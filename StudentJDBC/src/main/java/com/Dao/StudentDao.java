@@ -48,14 +48,19 @@ public class StudentDao {
 			pst.setString(6, student.getBranch());
 			pst.setDouble(7, student.getCgpa());
 			
-			pst.executeUpdate();
+			int value = pst.executeUpdate();
+			
+			if (value > 0) {
+				
+				return "Student Insert Successfully";
+			}
 		} 
 		catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
-		return "Student Insert Successfully";
+		return null;
 	}
 	
 	
@@ -73,14 +78,19 @@ public class StudentDao {
 			pst.setDouble(6, student.getCgpa());
 			pst.setInt(7, student.getId());
 			
-			pst.executeUpdate();
+			int value = pst.executeUpdate();
+			
+			if (value > 0) {
+				
+				return "Student Update Successfully";
+			}
 		} 
 		catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
-		return "Student Update Successfully";
+		return null;
 	}
 	
 	
@@ -94,14 +104,19 @@ public class StudentDao {
 			
 			pst.setInt(1, id);
 			
-			pst.executeUpdate();
+			int value = pst.executeUpdate();
+			
+			if (value > 0) {
+				
+				return "Student Delete Successfully";
+			}
 		} 
 		catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
-		return "Student Delete Successfully";
+		return null;
 	}
 	
 	

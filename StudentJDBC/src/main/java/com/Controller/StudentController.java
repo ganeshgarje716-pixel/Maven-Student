@@ -1,5 +1,6 @@
 package com.Controller;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.Entity.Student;
@@ -23,7 +24,7 @@ public class StudentController {
 	}
 	
 	
-	public String delete(int id) {
+	public String delete(int id) throws SQLException {
 		
 		return service.delete(id);
 	}
