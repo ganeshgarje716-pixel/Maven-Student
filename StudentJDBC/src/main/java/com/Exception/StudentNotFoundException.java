@@ -1,4 +1,4 @@
-package com.Service;
+package com.Exception;
 
 public class StudentNotFoundException extends RuntimeException {
 	
